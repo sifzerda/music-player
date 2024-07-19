@@ -20,13 +20,9 @@ const userSchema = new Schema({
     required: true,
     minlength: 5
   },
-  poolScore: [
+  astScore: [
     {
-      poolPoints: {
-        type: Number,
-        required: true,
-      },
-      poolTimeTaken: {
+      astPoints: {
         type: Number,
         required: true,
       },

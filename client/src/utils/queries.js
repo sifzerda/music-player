@@ -16,9 +16,8 @@ export const QUERY_USERS = gql`
       _id
       username
       email
-      poolScore {
-        poolPoints
-        poolTimeTaken
+      astScore {
+        astPoints
       }
     }
   }
@@ -30,19 +29,17 @@ export const QUERY_ME = gql`
       _id
       username
       email
-            poolScore {
-        poolPoints
-        poolTimeTaken
+            astScore {
+        astPoints
       }
     }
   }
 `;
 
-export const GET_POOL_SCORE = gql`
-  query getPoolScore($userId: ID!) {
-    getPoolScore(userId: $userId) {
-      poolPoints
-      pooltimeTaken
+export const GET_AST_SCORE = gql`
+  query getAstScore($userId: ID!) {
+    getAstScore(userId: $userId) {
+      astPoints
     }
   }
 `;

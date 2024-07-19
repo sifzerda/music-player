@@ -33,15 +33,14 @@ export const REMOVE_USER = gql`
   }
 `;
 
-export const SAVE_POOL_SCORE = gql`
-  mutation savePoolScore($userId: ID!, $poolPoints: Int!, $poolTimeTaken: Int!) {
-    savePoolScore(userId: $userId, poolPoints: $poolPoints, poolTimeTaken: $poolTimeTaken) {
+export const SAVE_AST_SCORE = gql`
+  mutation saveAstScore($userId: ID!, $astPoints: Int!) {
+    saveAstScore(userId: $userId, astPoints: $astPoints) {
       _id
       username
       email
-      poolScore {
-        poolPoints
-        poolTimeTaken
+      astScore {
+        astPoints
       }
     }
   }

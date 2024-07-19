@@ -1,7 +1,7 @@
 import { useQuery } from '@apollo/client';
 import { QUERY_ME } from '../utils/queries';
 import '../App.css';
-import '../8ballpool.css';
+import '../asteroids.css';
 
 const Profile = () => {
     const { loading, data, error } = useQuery(QUERY_ME);
@@ -10,25 +10,12 @@ const Profile = () => {
     if (error) return <p>Error: {error.message}</p>;
 
     const user = data?.me;
-    const poolScores = user?.poolScore || [];
-
-          // ------------------------------------------------------------//
-
-    // Helper FX to convert timer to minutes and seconds
-    const formatTime = (time) => {
-        const minutes = Math.floor(time / 60);
-        const seconds = time % 60;
-        return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
-      };
-  
-        // ------------------------------------------------------------//
+    const astScores = user?.astScore || [];
 
     // Sort scores by highest minePoints, and then by least time taken if points are tied
-    const sortedScores = [...poolScores].sort((a, b) => {
-        if (b.poolPoints !== a.poolPoints) {
-            return b.poolPoints - a.poolPoints; // Sort by points descending
-        } else {
-            return a.poolTimeTaken - b.poolTimeTaken; // Sort by time ascending if points are tied
+    const sortedScores = [...astScores].sort((a, b) => {
+        if (b.astPoints !== a.astPoints) {
+            return b.astPoints - a.astPoints; // Sort by points descending
         }
     });
 
@@ -38,11 +25,11 @@ const Profile = () => {
     return (
         <div className="profile-container">
             <div className="jumbo-bg-dark">
-                <h1 className='jumbo-bg-dark-text'>{user.username}&apos;s Corner</h1>
+                <h1 className='jumbo-bg-dark-text'>{user.username}'s Profile</h1>
             </div>
             <p className='black-text'>Email: {user.email}</p>
             <p className="email-info">Note: Your email cannot be seen by other users</p>
-            <h2 className='profile-text'>Your Eight Ball Pool Highscores:</h2>
+            <h2 className='profile-text'>Your Minesweeper Highscores:</h2>
             
             {limitedScores.length === 0 ? (
                 <p className="black-text">No high scores yet!</p>
@@ -52,15 +39,13 @@ const Profile = () => {
                         <tr>
                             <th>#</th>
                             <th>Score</th>
-                            <th>Time (in Seconds)</th>
                         </tr>
                     </thead>
                     <tbody>
                         {limitedScores.map((score, index) => (
                             <tr key={index}>
                                 <td>{index + 1}</td>
-                                <td>{score.poolPoints}</td>
-                                <td>{formatTime(score.poolTimeTaken)}</td>
+                                <td>{score.astPoints}</td>
                             </tr>
                         ))}
                     </tbody>

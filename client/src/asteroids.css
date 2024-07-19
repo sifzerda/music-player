@@ -1,0 +1,449 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+/* ------------------------- asteroids -------------------------*/
+
+.start {
+  position: relative;
+  border: 5px solid var(--midnight);
+}
+
+.end {
+  position: relative;
+  animation: neon-flashing 1s infinite alternate;
+  border: 3px solid var(--midnight);
+  border-radius: 6px;
+  padding: 10px;
+}
+
+@keyframes neon-flashing {
+  from {
+    text-shadow: 0 0 10px white, 0 0 20px var(--blue), 0 0 30px var(--blue), 0 0 40px var(--blue), 0 0 70px #0066ff, 0 0 80px #00fff6;
+  }
+
+  to {
+    text-shadow: none;
+  }
+}
+
+p.color {
+  color:  rgb(255, 88, 88);
+  max-width: 300px;
+}
+
+.white-box {
+  display: grid;
+  place-items: center;
+  background-color: white;
+  padding: 20px;
+  padding-left: 40px;
+  border-radius: 10px;
+  border: 8px solid var(--midnight);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: fit-content;
+  height: fit-content;
+}
+
+.grid-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.grid-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+div.start-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--volt);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px;
+}
+
+.submit-button-m {
+  display: block;
+  width: 100%;
+  max-width: 200px;
+  margin: 20px auto;
+  padding: 12px 16px;
+  font-size: 16px;
+  background-color: transparent;
+  color: var(--cyan);
+  border: 2px solid var(--blue);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s, border-color 0.3s;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  /* Increased box shadow for lift effect */
+}
+
+.submit-button-m:hover {
+  background-color: #ffffff;
+  border: 2px solid var(--cyan);
+  color: black;
+  font-weight: bold;
+}
+
+.submit-button-m:active {
+  transform: translateY(2px);
+  /* Move button down slightly when pressed */
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+  /* Reduce shadow for pressed effect */
+}
+
+p.black-text {
+  color: rgb(255, 255, 255);
+  padding: 10px;
+}
+
+.bright {
+  color: yellow;
+}
+
+.submit-button-y {
+  display: block;
+  width: 100%;
+  max-width: 200px;
+  margin: 4px auto;
+  padding: 12px 16px;
+  font-size: 16px;
+  background-color: transparent;
+  color: var(--cyan);
+  border: 2px solid var(--blue);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s, border-color 0.3s;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  /* Increased box shadow for lift effect */
+}
+
+.submit-button-y:hover {
+  background-color: #ffffff;
+  border: 2px solid var(--cyan);
+  color: black;
+  font-weight: bold;
+}
+
+.submit-button-y:active {
+  transform: translateY(2px);
+  /* Move button down slightly when pressed */
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+  /* Reduce shadow for pressed effect */
+}
+
+/* HIGH SCORES TABLE ---------------------------------*/
+
+.table-container {
+  border: 3px solid var(--midnight);
+  border-radius: 10px;
+  padding: 0px;
+  margin: 20px 0;
+  width: 100%;
+  max-width: 650px; 
+  box-sizing: border-box; 
+  color: white;
+}
+
+.high-scores-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.high-scores-table th,
+.high-scores-table td {
+  padding: 12px;
+  text-align: center;
+  border: 3px solid black;
+}
+
+.high-scores-table th {
+  background-color: var(--midnight);
+  border-bottom: 5px solid black;
+}
+
+.high-scores-table tbody tr {
+  background-color: #f9f9f9;
+}
+
+.high-scores-table tbody tr:hover {
+  background-color: #e9ecef;
+}
+
+.high-scores-table td {
+  color: var(--volt);
+  background-color: black;
+
+}
+
+.black-text a {
+  color: #00b7ff;
+    /* Remove underline from links */
+  text-decoration: none;
+  margin: 0 5px;
+  transition: color 0.9s ease;
+  font-weight: bold;
+  font-family: 'Share Tech Mono', 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.black-text a:hover {
+  color: #00b7ff !important;
+  /* Darker blue color on hover */
+  /* Underline links on hover */
+  border: 2px dashed #00b7ff;
+  padding: 5px;
+  font-weight: bold;
+}
+
+p.success {
+  display: block;
+  width: 100%;
+  margin: 20px auto;
+  padding: 12px 16px;
+  font-size: 16px;
+  color: var(--midnight);
+  border: 2px dashed var(--blue);
+  border-radius: 5px;
+}
+
+/* ---------------- profile -----------------*/
+
+.jumbo-bg-dark {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.jumbo-bg-dark-text {
+  margin: 0;
+  padding: 0;
+  font-size: 2rem;
+}
+
+.profile-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-container h1 {
+  text-align: center;
+}
+
+.profile-container p.email-info {
+  color: var(--light-red);
+  font-size: 0.9rem;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+.profile-text {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  color: black;
+}
+
+/*--------------------asteroids ----------------------------------*/
+
+.App {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.main-content {
+  border: 1px solid var(--cyan);
+  border-radius: 10px;
+  margin-left: -1px !important;
+  margin-right: -1px !important;
+}
+
+.game-container {
+  background: black;
+  position: relative;
+  display: flex;
+    /* Centers horizontally */
+  justify-content: center;
+  /* Centers vertically */
+  align-items: center;
+}
+
+canvas {
+  display: block;
+    /* Center canvas */
+  margin: 0 auto;
+  height: 100%;
+  width:  100%;
+  max-height: 670px;
+  max-width: 1470px;
+  border: 1px rgb(146, 147, 148) solid;
+  border-radius: 10px;
+}
+
+.game-over-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+    /* Semi-opaque background */
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.game-over {
+  font-size: 48px;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  background-color: #333;
+  border-radius: 10px;
+  z-index: 100;
+}
+
+.score-display,
+.lives-display {
+  position: absolute;
+  top: 5%;
+  left: 3%;
+  color: #ffffff;
+  font-size: 1.2vw; /* Use viewport width units for responsive sizing */
+  z-index: 100;
+}
+
+.lives-display {
+  top: 10%;
+  font-size: 1.2vw; /* Use viewport width units for responsive sizing */
+}
+
+.life-triangle {
+  color: var(--light-red);
+}
+
+/* 
+.level-display {
+  position: absolute;
+  top: 100px; 
+  left: 20px; 
+  color: white;
+  font-size: 24px;
+  z-index: 100;
+}
+*/
+
+.game-board {
+  position: relative;
+  height: 800px;
+  width: 1650px;
+  overflow: hidden;
+  margin: auto;
+  border: 2px solid purple;
+}
+
+/* ----------------- FinalScore game over -----------------*/
+
+.grid-container {
+  background-color: rgba(0, 0, 0, 0.6);
+  /* White background with 80% opacity */
+  height: 380px;
+  width: 300px;
+  border-radius: 10px;
+  margin: auto;
+}
+
+/* MEDIA QUERIES -----------------------------------*/
+
+/* media query for contact flex-box icons*/
+@media screen and (max-width: 600px) {
+  .black-text {
+    font-size: 1.1rem;
+  }
+  
+  .black-text a {
+    font-size: 1.1rem;
+  }
+
+  .bright {
+    font-size: 1.3rem;
+  }
+
+  .main-content {
+    padding: 0;
+  }
+}
+
+/* Small screens (mobile devices) */
+@media screen and (max-width: 768px) {
+
+  .black-text {
+    font-size: 1.0rem;
+  }
+  
+  .black-text a {
+    font-size: 1.0rem;
+  }
+
+  .bright {
+    font-size: 1.2rem;
+  }
+
+  .main-content {
+    padding: 0;
+  }
+
+  .score-display,
+  .lives-display {
+    position: absolute;
+    top:105%;
+    left: 3%;
+    font-size: 3.3vw; /* Use viewport width units for responsive sizing */
+  }
+
+  .lives-display {
+    top: 116%;
+  }
+}
+
+
+/* Medium screens (tablets) */
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+
+  .main-content {
+    padding: 0;
+  }
+
+  .score-display,
+  .lives-display {
+    position: absolute;
+    top:105%;
+    left: 3%;
+    font-size: 2.2vw; /* Use viewport width units for responsive sizing */
+  }
+
+  .lives-display {
+    top: 114%;
+  }
+}
+
+/* Half-maximized pc screen */
+@media screen and (max-width: 1710px) and (min-width: 800px) {
+
+  .main-content {
+    padding: 0;
+  }
+}

@@ -12,11 +12,10 @@ db.once('open', async () => {
         username: 'Xandromus',
         email: 'xandro@aol.com',
         password: '12345',
-/* -----------------8ballpool score*/ 
-        poolScore: [
+/* ----------------- score*/ 
+        astScore: [
           {
-            poolPoints: 100,
-            poolTimeTaken: 10
+            astPoints: 100
           }
         ]
       },
@@ -25,10 +24,9 @@ db.once('open', async () => {
         username: 'Sal',
         email: 'sal@hotmail.com',
         password: '12345',
-        poolScore: [
+        astScore: [
           {
-            poolPoints: 90,
-            poolTimeTaken: 12
+            astPoints: 90,
           }
         ]
       },
@@ -37,10 +35,9 @@ db.once('open', async () => {
         username: 'Lernantino',
         email: 'lernantino@gmail.com',
         password: '12345',
-        poolScore: [
+        astScore: [
           {
-            poolPoints: 50,
-            poolTimeTaken: 100
+            astPoints: 50,
           }
         ]
       },
@@ -58,7 +55,7 @@ db.once('open', async () => {
     ]);
 
     console.log('🔑 users seeded');
-    console.log('🎱 user.8ballpool scores seeded');
+    console.log('🚀 user.asteroids scores seeded');
 
     process.exit();
   } catch (err) {

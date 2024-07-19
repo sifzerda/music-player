@@ -10,34 +10,22 @@ const HighScores = () => {
 
   const users = data.users; // Extracting users from query data
 
-      // ------------------------------------------------------------//
-
-    // Helper FX to convert timer to minutes and seconds
-    const formatTime = (time) => {
-      const minutes = Math.floor(time / 60);
-      const seconds = time % 60;
-      return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
-    };
-
-      // ------------------------------------------------------------//
-
-  // Aggregate all poolScore entries with associated usernames
+  // Aggregate all astScore entries with associated usernames
   let allScores = [];
   users.forEach(user => {
-    user.poolScore.forEach(score => {
+    user.astScore.forEach(score => {
       allScores.push({
         username: user.username,
-        poolPoints: score.poolPoints,
-        poolTimeTaken: score.poolTimeTaken,
+        astPoints: score.astPoints,
       });
     });
   });
 
-  // Sort combined scores by poolPoints in descending order
-  // If points are the same, then sort by poolTimeTaken in ascending order
+  // Sort combined scores by astPoints in descending order
+  // If points are the same, then sort by astTimeTaken in ascending order
   allScores.sort((a, b) => {
-    if (b.poolPoints !== a.poolPoints) {
-      return b.poolPoints - a.poolPoints; // Sort by points descending
+    if (b.astPoints !== a.astPoints) {
+      return b.astPoints - a.astPoints; // Sort by points descending
     }
 });
 
@@ -46,7 +34,7 @@ const top20Scores = allScores.slice(0, 20);
 
 return (
   <div className="grid-wrapper">
-    <div className="grid-container-2">
+    <div className="grid-container">
       <h1 className='end'>High Scores</h1>
       <div className="table-container">
       <table className="high-scores-table">
@@ -54,7 +42,6 @@ return (
           <tr>
             <th>#</th>
             <th>Score</th>
-            <th>Time</th>
             <th>Username</th>
           </tr>
         </thead>
@@ -62,15 +49,14 @@ return (
           {top20Scores.map((score, index) => (
             <tr key={index}>
               <td>{index + 1}</td>
-              <td>{score.poolPoints}</td>
-              <td>{formatTime(score.poolTimeTaken)}</td>
+              <td>{score.astPoints}</td>
               <td>{score.username}</td>
             </tr>
           ))}
         </tbody>
       </table>
       </div>
-      <button className="submit-button-g" onClick={() => window.location.reload()}>BACK</button>
+      <button className="submit-button-m" onClick={() => window.location.reload()}>BACK</button>
     </div>
     
     </div>
