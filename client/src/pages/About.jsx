@@ -1,6 +1,6 @@
 import '../App.css';
-import Asteroids from '../components/Asteroids';
-import '../asteroids.css';
+import SlotMachine from '../components/SlotMachine';
+import '../slotmachine.css';
 
 export default function About () {
   return (
@@ -9,7 +9,7 @@ export default function About () {
 {/* game component */}
 
 
-<Asteroids />
+<SlotMachine />
 
 
 {/* -------------- */}

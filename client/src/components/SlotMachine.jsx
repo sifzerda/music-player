@@ -1,5 +1,5 @@
 // SlotMachine.js
-import React, { useState, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import { useSpring, animated } from 'react-spring';
 import styled from 'styled-components';
 import '../../public/images/symbols.png';

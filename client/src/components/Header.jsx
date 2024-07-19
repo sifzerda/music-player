@@ -2,7 +2,7 @@
 function Header() {
   return (
 
-<h1>ASTEROIDS</h1>
+<h1>Slot Machine</h1>
  
   );
 }
