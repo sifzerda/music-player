@@ -1,8 +1,8 @@
 // SlotMachine.js
-// SlotMachine.js
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { useSpring, animated } from 'react-spring';
 import styled from 'styled-components';
+import '../../public/images/symbols.png';
 
 const SlotMachineContainer = styled.div`
   display: flex;
@@ -33,12 +33,10 @@ const ReelWrapper = styled.div`
 `;
 
 const Reel = styled(animated.div)`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  font-size: 2em;
+  width: 100%;
+  height: calc(8 * 100px); /* 8 symbols each 100px height */
+  background: url('../../public/images/symbols.png') repeat-y;
+  background-size: 100% 800px; /* 8 symbols each 100px height */
 `;
 
 const SpinButton = styled.button`
@@ -56,28 +54,35 @@ const SpinButton = styled.button`
   }
 `;
 
-const symbols = ['🍒', '🍋', '🍊', '🍇', '🍉', '7️⃣', '🔔', '⭐'];
+const symbols = 8; // Number of symbols in the sprite
 
-const getRandomSymbol = () => Math.floor(Math.random() * symbols.length);
+const getRandomSymbol = () => Math.floor(Math.random() * symbols);
 
 const SlotMachine = () => {
   const [spinning, setSpinning] = useState(false);
   const [reels, setReels] = useState([0, 1, 2, 3, 4]);
 
-  const spins = reels.map((reel, index) => {
-    const { transform } = useSpring({
-      transform: spinning ? `translateY(-1000px)` : 'translateY(0px)',
-      config: { tension: 200, friction: 20 },
-      onRest: () => {
-        if (spinning) {
-          setSpinning(false);
-          setReels(reels.map(() => getRandomSymbol()));
-        }
-      },
-      delay: index * 100,
+  // Generate a new set of random symbols
+  const newReels = useMemo(() => reels.map(() => getRandomSymbol()), [spinning]);
+
+  const spins = useMemo(() => {
+    return reels.map((reel, index) => {
+      const endValue = -((1000 + Math.random() * 500) % (100 * symbols));
+      return useSpring({
+        from: { transform: `translateY(-${reel * 100}px)` },
+        to: { transform: `translateY(${endValue}px)` },
+        config: { tension: 200, friction: 20 },
+        reset: true,
+        onRest: () => {
+          if (spinning) {
+            setSpinning(false);
+            setReels(newReels);
+          }
+        },
+        delay: index * 100,
+      });
     });
-    return transform;
-  });
+  }, [reels, spinning, newReels]);
 
   const handleSpin = () => {
     setSpinning(true);
@@ -86,11 +91,9 @@ const SlotMachine = () => {
   return (
     <SlotMachineContainer>
       <ReelsContainer>
-        {reels.map((reel, index) => (
+        {reels.map((_, index) => (
           <ReelWrapper key={index}>
-            <Reel style={{ transform: spins[index] }}>
-              {symbols[reel]}
-            </Reel>
+            <Reel style={spins[index]} />
           </ReelWrapper>
         ))}
       </ReelsContainer>
