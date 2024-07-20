@@ -13,7 +13,7 @@ function Navigation() {
     <ul className="nav nav-tabs">
       <li className="nav-item">
         <Link to="/" className={isActive('/')}>
-          GAME
+          Slots
         </Link>
       </li>
       <li className="nav-item">

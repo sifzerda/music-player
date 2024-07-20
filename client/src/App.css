@@ -103,6 +103,7 @@ body,
   border: var(--dark-blue) ridge 9px;
   margin: 0 auto;
   text-align: center;
+height: 550px;
 }
 
 a {
@@ -115,104 +116,6 @@ a.back-link {
   color: white;
   margin-bottom: 10px;
   display: inline-block;
-}
-
-/* signup ---------------------------------------------------------*/
-
-form {
-  width: 65%;
-  margin: 0 auto;
-}
-
-.form-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.signup-container {
-  width: 100%;
-  max-width: 500px;
-  margin: 0 auto;
-  padding: 20px;
-  border-radius: 5px;
-  background-color: var(--bootstrap-dark);
-  border: 3px solid black;
-}
-
-.signup-form {
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-/* signup error*/
-.error-message { 
-  color: rgb(252, 74, 89);
-  font-size: 1em;  
-  margin-top: 5px;  
-}
-
-/* login error*/
-.error-text {
-  color:  rgb(252, 74, 89);
-}
-
-.button-container-z {
-  display: flex;
-  justify-content: center;
-  padding: 20px;
-}
-
-.submit-button-z {
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: var(--midnight);
-  color: #fff;
-  border: 2px solid var(--blue);
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.5s;
-}
-
-.submit-button-z:hover {
-  background-color: #ffffff;
-  border: 2px solid var(--blue);
-  color: var(--blue);
-}
-
-.form-group-z {
-  margin-bottom: 20px;
-}
-
-.label-z {
-  display: block;
-  margin-bottom: 5px;
-}
-
-label {
-  display: block;
-  text-decoration-skip-ink: none;
-  text-underline-offset: 0.2em;
-  margin-bottom: 10px;
-  margin-top: 10px;
-  color: white;
-  font-family: 'Source Code Pro';
-}
-
-.input-z {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  border: 6px var(--midnight) solid;
-  border-radius: 5px;
-}
-
-h2.login-title {
-  text-align: center;
-  margin-bottom: 20px;
-  margin-top: 20px;
-  font-family: 'Audiowide';
-  color: var(--blue);
 }
 
 div.container.my-1-9 {
@@ -278,7 +181,6 @@ a {
 padding: 5px;
 }
 
-
 /* svg icons on contact page*/
 a:hover {
   color: var(--cyan)!important;
@@ -331,20 +233,8 @@ p.footer-text {
   margin-top: 2px;
 }
 
-h4 {
-  color: var(--light-red);
-}
-
-h2 {
-  color: var(--creepy-green);
-}
-
 p.mb-0-1 {
   color: white;
-}
-
-h5 {
-  color: rgb(0, 110, 255);
 }
 
 /* content ------------------------------------------------*/
@@ -354,12 +244,6 @@ h5 {
   margin: 0 auto;
   border: 1px solid #ffffff;
   background-color: black!important;
-}
-
-p.code-left {
-  margin-left: 20px;
-  margin-right: 20px;
-  text-indent: 20px;
 }
 
 .bg-light {
@@ -372,12 +256,6 @@ p.code-left {
   align-items: center;
   font-size: 24px;
   cursor: pointer;
-}
-
-.delete-icon,
-.edit-icon {
-  margin-right: 5px;
-  color: #fff;
 }
 
 /* ================  Dropdown menu for subjects ========================== */
