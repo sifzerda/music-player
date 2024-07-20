@@ -66,12 +66,22 @@ const MusicPlayer = () => {
     }
   }, [playerRef]);
 
+    // Calculate the progress as a percentage
+    const progress = duration ? (currentTime / duration) * 100 : 0;
+
   return (
     <div className="music-player">
       <div className="title-bar">
         <div className="title2">.ılılılllıılılıllllıılılllıllı</div>
         <div className="title2">Now Playing:</div>
         <div className="title">{songs[currentSongIndex].title}</div>
+
+        <div className="progress-bar-container">
+          <div className="progress-bar" style={{ width: `${progress}%` }}></div>
+          <div className="progress-time">
+            {formatTime(currentTime)} / {formatTime(duration)}
+          </div>
+        </div>
 
         <div className="title2">{formatTime(currentTime)} / {formatTime(duration)}</div>
         <div className="title2"></div>
