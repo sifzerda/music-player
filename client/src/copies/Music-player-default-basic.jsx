@@ -1,11 +1,15 @@
-import { useState, useRef } from 'react';
+// this is react player with the inbuilt music controls (volume play pause song progress)
+
+// playback speed
+// 0:00 / 0:00 (first progress, second song duration)
+ 
+
+import { useState } from 'react';
 import ReactPlayer from 'react-player';
 
 const MusicPlayer = () => {
   const [currentSongIndex, setCurrentSongIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [volume, setVolume] = useState(1); // Volume range is 0 to 1
-  const playerRef = useRef(null);
 
   const songs = [
     { url: '../../public/sounds/thethingintroduces.mp3', title: '01 The Thing Introduces - Jaga Jazzist' },
@@ -29,10 +33,6 @@ const MusicPlayer = () => {
     setIsPlaying(true);
   };
 
-  const handleVolumeChange = (e) => {
-    setVolume(parseFloat(e.target.value));
-  };
-
   return (
     <div className="music-player">
       <div className="title-bar">
@@ -42,13 +42,10 @@ const MusicPlayer = () => {
         <div className="title2">.ılılılllıılılıllllıılılllıllı</div>
       </div>
       <ReactPlayer
-        ref={playerRef}
         url={songs[currentSongIndex].url}
         playing={isPlaying}
-        volume={volume}
-        controls={false} // Disable built-in controls
+        controls
         onEnded={handleNextSong}
-        className="react-player"
       />
       <div className="controls">
         <button className="control-button" onClick={handlePreviousSong}> ◁◁ </button>
@@ -56,22 +53,6 @@ const MusicPlayer = () => {
           {isPlaying ? ' ||  ' : '▷'}
         </button>
         <button className="control-button" onClick={handleNextSong}> ▷▷ </button>
-      
-
-        <button className="control-button" onClick={handleNextSong}> ▷▷ </button>
-        <div className="volume-control">
-          <label htmlFor="volume">Volume:</label>
-          <input
-            type="range"
-            id="volume"
-            min="0"
-            max="1"
-            step="0.01"
-            value={volume}
-            onChange={handleVolumeChange}
-          />
-        </div>
-      
       </div>
     </div>
   );
