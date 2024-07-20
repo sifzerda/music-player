@@ -50,56 +50,56 @@ flex: 1;
 }
 
 .controls {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 10px; /* Add margin to ensure it doesn't overlap with other elements */
-}
-
-.control-button {
-  background: #000;
-  color: #00FF00;
-  border: 2px solid #00FF00;
-  border-radius: 5px;
-  padding: 10px 20px;
-  cursor: pointer;
-  font-family: 'VT323', monospace;
-  transition: background 0.3s, color 0.3s;
-}
-
-.control-button:hover {
-  background: #00FF00;
-  color: #000;
-}
-
-.control-button:focus {
-  outline: none;
-}
-
-.react-player-wrapper {
+    display: flex;
+    align-items: center;
     width: 100%;
-    max-width: 100%; /* Ensures player doesn't exceed the container width */
+    position: relative;
   }
-
-.react-player-wrapper .react-player {
-  width: 100%; /* ReactPlayer should fit the width of its container */
-}
-
-.volume-toggle {
+  
+  .play-pause-controls {
+    display: inline-block;
+    text-align: center;
+    flex: 1;
+  }
+  
+  .volume-controls {
+    position: absolute;
+    right: 10px; /* Adjust the space from the right edge */
+    text-align: center;
+  }
+  
+  .control-button {
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #48ff00;
+    margin: 0 10px; /* Space between buttons */
+    border: 2px solid rgb(60, 255, 0);
+    border-radius: 5px;
+    padding: 2px 8px;
+  }
+  
+  .control-button:hover {
+    color: #0056b3;
+  }
+  
+  .volume-toggle {
     background: transparent;
     border: none;
     font-size: 24px;
     cursor: pointer;
-    margin: 5px;
-    color: #007bff;
+    color: #007bff; 
   }
   
   .volume-toggle:hover {
-    color: #0056b3;
+    color: #00e1ff;
   }
-
-.volume-slider {
-    width: 100%;
-    max-width: 300px;
-}
-
+  
+  .volume-control {
+    margin-top: 5px; /* Space between toggle button and slider */
+  }
+  
+  .volume-slider {
+    width: 100px; /* Adjust width as needed */
+  }
