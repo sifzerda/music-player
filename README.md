@@ -65,7 +65,7 @@ The slow machine images aren't displaying deployed version.
 ## (4) Installation
 
 ```bash
-git clone https://github.com/sifzerda/slot-machine.git
+git clone https://github.com/sifzerda/slotmachine.git
 cd slot-machine
 npm install
 npm run start
