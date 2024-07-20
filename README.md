@@ -1,4 +1,4 @@
-# SLOT MACHINE 🎰
+# SLOT MACHINE 🎰 + MUSIC PLAYER
 
 Current games in gamestack:
 
