@@ -8,10 +8,13 @@ import Error from './pages/Error.jsx';
 import About from './pages/About.jsx';
 import Profile from './pages/Profile.jsx';
 
+
 // subjects
 
 import Login from './pages/Login.jsx';
 import Signup from './pages/Signup.jsx';
+
+import Music from './pages/Music.jsx';
 
 // Define the accessible routes, and which components respond to which URL
 const router = createBrowserRouter([
@@ -37,6 +40,11 @@ const router = createBrowserRouter([
       {
         path: '/Profile',
         element: <Profile />
+      },
+
+      {
+        path: '/Music',
+        element: <Music />
       },
 
     ],

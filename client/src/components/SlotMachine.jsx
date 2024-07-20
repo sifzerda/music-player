@@ -1,6 +1,7 @@
 // SlotMachine.js
 import { useState, useMemo } from 'react';
 import { useSpring, animated } from 'react-spring';
+import ReactPlayer from 'react-player';
 import styled from 'styled-components';
 import '../../public/images/symbols.png';
 
@@ -34,9 +35,9 @@ const ReelWrapper = styled.div`
 
 const Reel = styled(animated.div)`
   width: 100%;
-  height: calc(8 * 100px); /* 8 symbols each 100px height */
+  height: calc(8 * 100px);  
   background: url('../../public/images/symbols.png') repeat-y;
-  background-size: 100% 800px; /* 8 symbols each 100px height */
+  background-size: 100% 800px;  
 `;
 
 const SpinButton = styled.button`
@@ -51,6 +52,30 @@ const SpinButton = styled.button`
 
   &:hover {
     background: #0056b3;
+  }
+`;
+
+// music player
+const MusicPlayerContainer = styled.div`
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+`;
+
+const NextSongButton = styled.button`
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  background: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+
+  &:hover {
+    background: #218838;
   }
 `;
 
@@ -98,6 +123,21 @@ const SlotMachine = () => {
         ))}
       </ReelsContainer>
       <SpinButton onClick={handleSpin}>Spin</SpinButton>
+{/* ------------------music player -------------------------------*/}
+      <MusicPlayerContainer>
+        <ReactPlayer
+          url={[
+            { src: '../../public/sounds/thethingintroduces.mp3', type: 'audio/mp3' },
+            { src: '../../public/sounds/onearmedbandit.mp3', type: 'audio/mp3' },
+            { src: '../../public/sounds/banana.mp3', type: 'audio/mp3' },
+            { src: '../../public/sounds/spektral.mp3', type: 'audio/mp3' }
+            //{ src: '../../public/sounds/shrine', type: 'audio/mp3' }
+          ]}
+          controls
+          width='100%'
+        />
+      </MusicPlayerContainer>
+{/* --------------------------------------------------------------*/}
     </SlotMachineContainer>
   );
 };

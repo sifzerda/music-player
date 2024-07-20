@@ -60,12 +60,12 @@ return (
       </Link>
     </li>
 
-{/*   <li className="nav-item">
-      <Link to="/Copy" className={isActive('/Copy')}>
-        spare
+ <li className="nav-item">
+      <Link to="/music" className={isActive('/music')}>
+        Music
       </Link>
     </li>
-*/} 
+ 
 
 
     {/* ---------------------------------- log in conditional function --------------------------------  */}
