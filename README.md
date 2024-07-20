@@ -71,6 +71,9 @@ npm install
 npm run start
 ```
 
+React-player:
+- you can skip ahead or move back in song by clicking song progress bar.
+
 ## (5) Usage
 
 Technologies:
