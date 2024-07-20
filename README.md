@@ -30,6 +30,8 @@ A personal project to create a react MERN stack app which has a number of simple
 
 This has a basic attempt at a slot machine (incomplete), and working react music player loaded with several test songs.
 
+The slow machine images aren't displaying deployed version.
+
 ## (2) Badges
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
@@ -90,7 +92,8 @@ const ;
 
 ## (8) Bugs and Further Development: 
 
-- slot images stop out of alignment
+- slot images stop out of alignment (local)
+- slot images don't display (deployed)
 
 Optimization:
 - use react-virtualized to only render visible stuff
@@ -106,6 +109,7 @@ Optimization:
 - [ ] align images 
 - [ ] user gets points
 - [ ] user spends points to spin
+- [ ] fix images in deployed version
 
 ## (10) Support
 
