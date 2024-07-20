@@ -84,3 +84,22 @@ flex: 1;
 .react-player-wrapper .react-player {
   width: 100%; /* ReactPlayer should fit the width of its container */
 }
+
+.volume-toggle {
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    margin: 5px;
+    color: #007bff;
+  }
+  
+  .volume-toggle:hover {
+    color: #0056b3;
+  }
+
+.volume-slider {
+    width: 100%;
+    max-width: 300px;
+}
+

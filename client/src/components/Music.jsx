@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import ReactPlayer from 'react-player';
+import { FaVolumeUp, FaVolumeMute, FaVolumeOff } from 'react-icons/fa'; // Import speaker icons
 
 const MusicPlayer = () => {
   const [currentSongIndex, setCurrentSongIndex] = useState(0);
@@ -8,6 +9,8 @@ const MusicPlayer = () => {
 
   const [duration, setDuration] = useState(0); // Duration of the song
   const [currentTime, setCurrentTime] = useState(0); // Current playback time
+
+  const [showVolumeControl, setShowVolumeControl] = useState(false); // State for volume control visibility
 
   const playerRef = useRef(null);
 
@@ -35,6 +38,10 @@ const MusicPlayer = () => {
 
   const handleVolumeChange = (e) => {
     setVolume(parseFloat(e.target.value));
+  };
+
+  const toggleVolumeControl = () => {
+    setShowVolumeControl(!showVolumeControl);
   };
 
     // Format time as mm:ss
@@ -81,26 +88,29 @@ const MusicPlayer = () => {
         onEnded={handleNextSong}
         className="react-player"
       />
-      <div className="controls">
-        <button className="control-button" onClick={handlePreviousSong}> ◁| </button>
+ <div className="controls">
+        <button className="control-button" onClick={handlePreviousSong}>◁◁</button>
         <button className="control-button" onClick={handlePlayPause}>
-          {isPlaying ? ' ||  ' : '▷'}
+          {isPlaying ? '||' : '▷'}
         </button>
-
-        <button className="control-button" onClick={handleNextSong}> ▷▷ </button>
-        <div className="volume-control">
-          <label htmlFor="volume">Volume:</label>
-          <input
-            type="range"
-            id="volume"
-            min="0"
-            max="1"
-            step="0.01"
-            value={volume}
-            onChange={handleVolumeChange}
-          />
-        </div>
-      
+        <button className="control-button" onClick={handleNextSong}>▷▷</button>
+        <button className="volume-toggle" onClick={toggleVolumeControl}>
+          {volume === 0 ? <FaVolumeMute /> : volume <= 0.5 ? <FaVolumeOff /> : <FaVolumeUp />}
+        </button>
+        {showVolumeControl && (
+          <div className="volume-control">
+            <input
+              className='volume-slider'
+              type="range"
+              id="volume"
+              min="0"
+              max="1"
+              step="0.01"
+              value={volume}
+              onChange={handleVolumeChange}
+            />
+          </div>
+        )}
       </div>
     </div>
   );
