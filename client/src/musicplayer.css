@@ -11,7 +11,7 @@
     border-radius: 10px;
     width: 100%;
     /* Make sure the player container takes full width */
-    max-width: 700px;
+    max-width: 450px;
     /* Set a maximum width for the player */
     margin: auto;
     font-family: 'VT323', monospace;
