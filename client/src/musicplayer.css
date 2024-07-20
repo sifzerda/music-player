@@ -19,6 +19,10 @@
     box-shadow: 0 0 20px #00FF00;
 }
 
+.react-player {
+    max-height: 10px;
+}
+
 .title-bar {
     position: relative;
     width: 100%;

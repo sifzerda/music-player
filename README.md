@@ -1,4 +1,4 @@
-# SLOT MACHINE 🎰 + MUSIC PLAYER
+# SLOT MACHINE 🎰 + MUSIC PLAYER ▶️
 
 Current games in gamestack:
 
@@ -6,7 +6,7 @@ Current games in gamestack:
 - [ ] Solitaire
 - [ ] Asteroids
 - [ ] Pool
-- [x] Slot Machine
+- [x] Slot Machine + Music Player
 
 ## Table of Contents
 
@@ -28,7 +28,7 @@ Current games in gamestack:
 
 A personal project to create a react MERN stack app which has a number of simple games. I used trial and error and ChatGPT prompting. 
 
-This was built with React, react-spring, styled components, Node, Javascript, and CSS. 
+This was built with React, react-spring, styled components, react-player, Node, Javascript, and CSS. 
 
 ## (2) Badges
 
@@ -47,8 +47,6 @@ This was built with React, react-spring, styled components, Node, Javascript, an
 ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
 ![React-Spring](https://img.shields.io/badge/Spring-000000.svg?style=for-the-badge&logo=Spring&logoColor=white)
 ![Styled Components](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
-![Apollo-GraphQL](https://img.shields.io/badge/-ApolloGraphQL-311C87?style=for-the-badge&logo=apollo-graphql)
 ![FontAwesome](https://img.shields.io/badge/Font%20Awesome-538DD7.svg?style=for-the-badge&logo=Font-Awesome&logoColor=white) 
 ![Heroku](https://img.shields.io/badge/heroku-%23430098.svg?style=for-the-badge&logo=heroku&logoColor=white)
 
@@ -71,15 +69,15 @@ npm run start
 
 Technologies:
 
-- <strong>useRef and requestAnimationFrame: </strong> API library to update game state at fps matching the display refresh rate, creating animation, by default 60fps.
 + - <strong>react-spring: </strong> animation smoothing, add tension, friction through 'animated divs' (customized through shipStyle, projectileStyle, and asteroidStyle).
-+ Styled components
++ Styled components (slot machine)
++ react-player (music player)
 
 ## (6) Dev Stuff: Building:
 
 The main functions of code:
 
-- <u>const  </u>: xxx
+- React-player has a default appearance, which was changed, setting controls={false} and making useStates to control volume, song progress bar, song time, etc.
 
 ## (7) Alternative Config
 

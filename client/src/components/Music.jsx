@@ -83,7 +83,6 @@ const MusicPlayer = () => {
     }
   };
 
-
   return (
     <div className="music-player">
       <div className="title-bar">
