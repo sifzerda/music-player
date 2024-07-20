@@ -51,9 +51,12 @@ This has a basic attempt at a slot machine (incomplete), and working react music
 
 ## (3) Visuals
 
-[Visit App deployed to Heroku](https://slot-machine-10-d02b9b752090.herokuapp.com/)
+[Visit App deployed to Vercel](https://slotmachine-five.vercel.app/)
 
-![app-screenshot](https://github.com/sifzerda/slot-machine/assets/139626561/31b31fd3-c265-4837-8a97-553cb44f1d23)
+[Visit App deployed to Netlify](https://slotmachine-10.netlify.app/)
+
+![mp](https://github.com/user-attachments/assets/514ca036-be73-4324-894f-445f9045bc96)
+
 
 ## (4) Installation
 
