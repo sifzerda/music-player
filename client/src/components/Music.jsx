@@ -69,6 +69,21 @@ const MusicPlayer = () => {
     // Calculate the progress as a percentage
     const progress = duration ? (currentTime / duration) * 100 : 0;
 
+      // Handle click on progress bar to seek
+  const handleProgressBarClick = (e) => {
+    const progressBar = e.currentTarget;
+    const rect = progressBar.getBoundingClientRect();
+    const offsetX = e.clientX - rect.left;
+    const newProgress = (offsetX / rect.width) * 100;
+    const newTime = (newProgress / 100) * duration;
+    setCurrentTime(newTime);
+    if (playerRef.current) {
+      const player = playerRef.current.getInternalPlayer();
+      player.currentTime = newTime;
+    }
+  };
+
+
   return (
     <div className="music-player">
       <div className="title-bar">
@@ -76,7 +91,7 @@ const MusicPlayer = () => {
         <div className="title2">Now Playing:</div>
         <div className="title">{songs[currentSongIndex].title}</div>
 
-        <div className="progress-bar-container">
+        <div className="progress-bar-container" onClick={handleProgressBarClick}>
           <div className="progress-bar" style={{ width: `${progress}%` }}></div>
           <div className="progress-time">
             {formatTime(currentTime)} / {formatTime(duration)}
