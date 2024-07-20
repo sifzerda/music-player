@@ -26,9 +26,9 @@ Current games in gamestack:
 
 ## (1) Description
 
-A personal project to create a react MERN stack app which has a number of simple games. I used trial and error and ChatGPT prompting. 
+A personal project to create a react MERN stack app which has a number of simple games. I used trial and error and ChatGPT prompting. This was built with React, react-spring, styled components, react-player, Node, Javascript, and CSS. 
 
-This was built with React, react-spring, styled components, react-player, Node, Javascript, and CSS. 
+This has a basic attempt at a slot machine (incomplete), and working react music player loaded with several test songs.
 
 ## (2) Badges
 
@@ -45,16 +45,15 @@ This was built with React, react-spring, styled components, react-player, Node, 
 ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white) 
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
-![React-Spring](https://img.shields.io/badge/Spring-000000.svg?style=for-the-badge&logo=Spring&logoColor=white)
 ![Styled Components](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white)
 ![FontAwesome](https://img.shields.io/badge/Font%20Awesome-538DD7.svg?style=for-the-badge&logo=Font-Awesome&logoColor=white) 
 ![Heroku](https://img.shields.io/badge/heroku-%23430098.svg?style=for-the-badge&logo=heroku&logoColor=white)
 
 ## (3) Visuals
 
-[Visit App deployed to Heroku](https://asteroids-10-d02b9b752090.herokuapp.com/)
+[Visit App deployed to Heroku](https://slot-machine-10-d02b9b752090.herokuapp.com/)
 
-![asteroids-screenshot](https://github.com/sifzerda/asteroids/assets/139626561/31b31fd3-c265-4837-8a97-553cb44f1d23)
+![app-screenshot](https://github.com/sifzerda/slot-machine/assets/139626561/31b31fd3-c265-4837-8a97-553cb44f1d23)
 
 ## (4) Installation
 
