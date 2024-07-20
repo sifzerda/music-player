@@ -15,11 +15,11 @@ const MusicPlayer = () => {
   const playerRef = useRef(null);
 
   const songs = [
-    { url: '../../public/sounds/thethingintroduces.mp3', title: '01 The Thing Introduces - Jaga Jazzist' },
-    { url: '../../public/sounds/onearmedbandit.mp3', title: '02 One Armed Bandit - Jaga Jazzist' },
-    { url: '../../public/sounds/banana.mp3', title: '03 Bananfluer Overalt - Jaga Jazzist' },
-    { url: '../../public/sounds/spektral.mp3', title: '04 220 V Spektral (Final Mix) - Jaga Jazzist' },
-    { url: '../../public/sounds/shrine.mp3', title: '05 The Shrine (OKIOK Remix) - Jaga Jazzist' },
+    { url: 'sounds/thethingintroduces.mp3', title: '01 The Thing Introduces - Jaga Jazzist' },
+    { url: 'sounds/onearmedbandit.mp3', title: '02 One Armed Bandit - Jaga Jazzist' },
+    { url: 'sounds/banana.mp3', title: '03 Bananfluer Overalt - Jaga Jazzist' },
+    { url: 'sounds/spektral.mp3', title: '04 220 V Spektral (Final Mix) - Jaga Jazzist' },
+    { url: 'sounds/shrine.mp3', title: '05 The Shrine (OKIOK Remix) - Jaga Jazzist' },
   ];
 
   const handlePlayPause = () => {

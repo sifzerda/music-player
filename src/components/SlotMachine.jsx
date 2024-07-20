@@ -2,7 +2,7 @@
 import { useState, useMemo } from 'react';
 import { useSpring, animated } from 'react-spring';
 import styled from 'styled-components';
-import '../../public/images/symbols.png';
+import '/images/symbols.png';
 
 const SlotMachineContainer = styled.div`
   display: flex;
