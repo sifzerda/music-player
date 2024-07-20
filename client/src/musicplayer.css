@@ -1,3 +1,5 @@
+/* music player -------------------------------------------------------------*/
+
 .music-player {
 display: flex;
 flex: 1;
@@ -43,10 +45,6 @@ flex: 1;
   100% {
     transform: translateX(-100%);
   }
-}
-
-.title2 {
-
 }
 
 .controls {
