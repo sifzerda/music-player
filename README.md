@@ -73,7 +73,7 @@ npm run start
 
 Technologies:
 
-+ - <strong>react-spring: </strong> animation smoothing, add tension, friction through 'animated divs' (customized through shipStyle, projectileStyle, and asteroidStyle).
++ <strong>react-spring: </strong> animation.
 + Styled components (slot machine)
 + react-player (music player)
 
