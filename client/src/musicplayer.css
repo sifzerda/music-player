@@ -53,7 +53,7 @@ flex: 1;
     display: flex;
     align-items: center;
     width: 100%;
-    position: relative;
+    justify-content: center; /* Center content horizontally */
   }
   
   .play-pause-controls {
@@ -102,4 +102,14 @@ flex: 1;
   
   .volume-slider {
     width: 100px; /* Adjust width as needed */
+  }
+
+  .volume-control {
+    position: absolute;
+    bottom: 50%; /* Adjust based on your layout */
+    right: 0;
+    transform: translateY(50%); /* Center vertically relative to button */
+    display: flex;
+    align-items: center;
+    z-index: 10; /* Ensure it's above other elements */
   }

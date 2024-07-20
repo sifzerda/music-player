@@ -72,8 +72,11 @@ const MusicPlayer = () => {
         <div className="title2">.ılılılllıılılıllllıılılllıllı</div>
         <div className="title2">Now Playing:</div>
         <div className="title">{songs[currentSongIndex].title}</div>
+
         <div className="title2">{formatTime(currentTime)} / {formatTime(duration)}</div>
         <div className="title2"></div>
+
+
         <div className="title2">.ılılılllıılılıllllıılılllıllı</div>
       </div>
       <ReactPlayer
@@ -85,33 +88,29 @@ const MusicPlayer = () => {
         onEnded={handleNextSong}
         className="react-player"
       />
-      <div className="controls">
-        <div className="play-pause-controls">
-          <button className="control-button" onClick={handlePreviousSong}>◁◁</button>
-          <button className="control-button" onClick={handlePlayPause}>
-            {isPlaying ? '||' : '▷'}
-          </button>
-          <button className="control-button" onClick={handleNextSong}>▷▷</button>
-        </div>
-        <div className="volume-controls">
-          <button className="volume-toggle" onClick={toggleVolumeControl}>
-            {volume === 0 ? <FaVolumeMute /> : volume <= 0.5 ? <FaVolumeOff /> : <FaVolumeUp />}
-          </button>
-          {showVolumeControl && (
-            <div className="volume-control">
-              <input
-                className='volume-slider'
-                type="range"
-                id="volume"
-                min="0"
-                max="1"
-                step="0.01"
-                value={volume}
-                onChange={handleVolumeChange}
-              />
-            </div>
-          )}
-        </div>
+ <div className="controls">
+        <button className="control-button" onClick={handlePreviousSong}>◁◁</button>
+        <button className="control-button" onClick={handlePlayPause}>
+          {isPlaying ? '||' : '▷'}
+        </button>
+        <button className="control-button" onClick={handleNextSong}>▷▷</button>
+        <button className="volume-toggle" onClick={toggleVolumeControl}>
+          {volume === 0 ? <FaVolumeMute /> : volume <= 0.5 ? <FaVolumeOff /> : <FaVolumeUp />}
+        </button>
+        {showVolumeControl && (
+          <div className="volume-control">
+            <input
+              className='volume-slider'
+              type="range"
+              id="volume"
+              min="0"
+              max="1"
+              step="0.01"
+              value={volume}
+              onChange={handleVolumeChange}
+            />
+          </div>
+        )}
       </div>
     </div>
   );
