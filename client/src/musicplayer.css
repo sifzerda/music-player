@@ -12,6 +12,7 @@
     width: 100%;
     /* Make sure the player container takes full width */
     max-width: 450px;
+    max-height: 700px;
     /* Set a maximum width for the player */
     margin: auto;
     font-family: 'VT323', monospace;
