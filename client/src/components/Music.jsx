@@ -1,10 +1,14 @@
-import { useState, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import ReactPlayer from 'react-player';
 
 const MusicPlayer = () => {
   const [currentSongIndex, setCurrentSongIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [volume, setVolume] = useState(1); // Volume range is 0 to 1
+  const [volume, setVolume] = useState(0.3); // Volume range is 0 to 1
+
+  const [duration, setDuration] = useState(0); // Duration of the song
+  const [currentTime, setCurrentTime] = useState(0); // Current playback time
+
   const playerRef = useRef(null);
 
   const songs = [
@@ -33,12 +37,39 @@ const MusicPlayer = () => {
     setVolume(parseFloat(e.target.value));
   };
 
+    // Format time as mm:ss
+    const formatTime = (seconds) => {
+        const minutes = Math.floor(seconds / 60);
+        const secs = Math.floor(seconds % 60);
+        return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
+      };
+
+        // Update duration and current time
+  useEffect(() => {
+    if (playerRef.current) {
+      const player = playerRef.current.getInternalPlayer();
+      if (player) {
+        player.addEventListener('loadedmetadata', () => {
+          setDuration(player.duration);
+        });
+        player.addEventListener('timeupdate', () => {
+          setCurrentTime(player.currentTime);
+        });
+      }
+    }
+  }, [playerRef]);
+
   return (
     <div className="music-player">
       <div className="title-bar">
         <div className="title2">.ılılılllıılılıllllıılılllıllı</div>
         <div className="title2">Now Playing:</div>
         <div className="title">{songs[currentSongIndex].title}</div>
+
+        <div className="title2">{formatTime(currentTime)} / {formatTime(duration)}</div>
+        <div className="title2"></div>
+
+
         <div className="title2">.ılılılllıılılıllllıılılllıllı</div>
       </div>
       <ReactPlayer
@@ -46,17 +77,15 @@ const MusicPlayer = () => {
         url={songs[currentSongIndex].url}
         playing={isPlaying}
         volume={volume}
-        controls={false} // Disable built-in controls
+        controls={false} // Disable built-in controls (custom styled controls)
         onEnded={handleNextSong}
         className="react-player"
       />
       <div className="controls">
-        <button className="control-button" onClick={handlePreviousSong}> ◁◁ </button>
+        <button className="control-button" onClick={handlePreviousSong}> ◁| </button>
         <button className="control-button" onClick={handlePlayPause}>
           {isPlaying ? ' ||  ' : '▷'}
         </button>
-        <button className="control-button" onClick={handleNextSong}> ▷▷ </button>
-      
 
         <button className="control-button" onClick={handleNextSong}> ▷▷ </button>
         <div className="volume-control">

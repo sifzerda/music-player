@@ -2,6 +2,7 @@
 
 .music-player {
 display: flex;
+flex: 1;
   flex-direction: column;
   align-items: center; /* Center content horizontally */
   text-align: center;
