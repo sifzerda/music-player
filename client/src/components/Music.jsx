@@ -1,16 +1,16 @@
 import { useState, useEffect, useRef } from 'react';
 import ReactPlayer from 'react-player';
-import { FaVolumeUp, FaVolumeMute, FaVolumeOff } from 'react-icons/fa'; // Import speaker icons
+import { FaVolumeUp, FaVolumeMute, FaVolumeOff } from 'react-icons/fa';
 
 const MusicPlayer = () => {
   const [currentSongIndex, setCurrentSongIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [volume, setVolume] = useState(0.3); // Volume range is 0 to 1
+  const [volume, setVolume] = useState(0.3);
 
-  const [duration, setDuration] = useState(0); // Duration of the song
-  const [currentTime, setCurrentTime] = useState(0); // Current playback time
+  const [duration, setDuration] = useState(0);
+  const [currentTime, setCurrentTime] = useState(0);
 
-  const [showVolumeControl, setShowVolumeControl] = useState(false); // State for volume control visibility
+  const [showVolumeControl, setShowVolumeControl] = useState(false);
 
   const playerRef = useRef(null);
 
@@ -44,14 +44,13 @@ const MusicPlayer = () => {
     setShowVolumeControl(!showVolumeControl);
   };
 
-    // Format time as mm:ss
-    const formatTime = (seconds) => {
-        const minutes = Math.floor(seconds / 60);
-        const secs = Math.floor(seconds % 60);
-        return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
-      };
+  // Format time as mm:ss
+  const formatTime = (seconds) => {
+    const minutes = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+    return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
+  };
 
-        // Update duration and current time
   useEffect(() => {
     if (playerRef.current) {
       const player = playerRef.current.getInternalPlayer();
@@ -66,21 +65,20 @@ const MusicPlayer = () => {
     }
   }, [playerRef]);
 
-    // Calculate the progress as a percentage
-    const progress = duration ? (currentTime / duration) * 100 : 0;
+  const progress = duration ? (currentTime / duration) * 100 : 0;
 
-      // Handle click on progress bar to seek
+  // Handle click on progress bar to seek
   const handleProgressBarClick = (e) => {
     const progressBar = e.currentTarget;
     const rect = progressBar.getBoundingClientRect();
     const offsetX = e.clientX - rect.left;
     const newProgress = (offsetX / rect.width) * 100;
     const newTime = (newProgress / 100) * duration;
-    setCurrentTime(newTime);
     if (playerRef.current) {
       const player = playerRef.current.getInternalPlayer();
       player.currentTime = newTime;
     }
+    setCurrentTime(newTime); // Update the currentTime state to reflect the new position
   };
 
   return (
@@ -100,7 +98,6 @@ const MusicPlayer = () => {
         <div className="title2">{formatTime(currentTime)} / {formatTime(duration)}</div>
         <div className="title2"></div>
 
-
         <div className="title2">.ılılılllıılılıllllıılılllıllı</div>
       </div>
       <ReactPlayer
@@ -108,11 +105,11 @@ const MusicPlayer = () => {
         url={songs[currentSongIndex].url}
         playing={isPlaying}
         volume={volume}
-        controls={false} // Disable built-in controls (custom styled controls)
+        controls={false}
         onEnded={handleNextSong}
         className="react-player"
       />
- <div className="controls">
+      <div className="controls">
         <button className="control-button" onClick={handlePreviousSong}>◁◁</button>
         <button className="control-button" onClick={handlePlayPause}>
           {isPlaying ? '||' : '▷'}
