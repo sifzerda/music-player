@@ -1,5 +1,7 @@
 # SLOT MACHINE 🎰 + MUSIC PLAYER ▶️
 
+** slot machine not displaying in deployment; music player works
+
 Current games in gamestack:
 
 - [ ] Minesweeper
