@@ -28,7 +28,7 @@
   --flame2: #e5ff00;
   --flame3: #ff5e00;
   --asteroid-canvas: #15151F;
-  --dark-purple:  rgb(6, 5, 22);
+  --dark-purple: rgb(6, 5, 22);
   --green-off: rgb(99, 124, 91);
 }
 
@@ -72,6 +72,15 @@ li {
 }
 
 /*---------------------------------------------------*/
+
+.info {
+  color: white;
+  font-size: 16px;
+  padding: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+
+}
 
 .px-5 {
   padding-right: 3rem !important;
@@ -164,7 +173,7 @@ div.container.my-1-9 {
   width: 100%;
   display: flex;
   flex-direction: column;
-  border-right:  var(--dark-purple) ridge 8px;
+  border-right: var(--dark-purple) ridge 8px;
   align-items: center;
   padding: 0;
   background: black;
@@ -212,15 +221,15 @@ a:hover {
 
 .nav-link:hover {
   background-color: black !important;
-  color:  white  !important;
-  border: 2px solid  #007bff !important;
+  color: white !important;
+  border: 2px solid #007bff !important;
   font-style: italic;
 }
 
 .nav-link.active {
   background-color: black !important;
   color: var(--lime) !important;
-  border: 2px solid  #007bff !important;
+  border: 2px solid #007bff !important;
   font-style: italic;
 }
 
