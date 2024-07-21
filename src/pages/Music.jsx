@@ -1,6 +1,5 @@
 import '../App.css';
 import Music from '../components/Music';
-import '../slotmachine.css';
 import '../musicplayer.css';
 
 export default function About () {
@@ -9,9 +8,7 @@ export default function About () {
 
 {/* game component */}
 
-
 <Music />
-
 
 {/* -------------- */}
 

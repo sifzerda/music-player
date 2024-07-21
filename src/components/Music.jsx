@@ -15,11 +15,18 @@ const MusicPlayer = () => {
   const playerRef = useRef(null);
 
   const songs = [
-    { url: 'sounds/thethingintroduces.mp3', title: '01 The Thing Introduces - Jaga Jazzist' },
-    { url: 'sounds/onearmedbandit.mp3', title: '02 One Armed Bandit - Jaga Jazzist' },
-    { url: 'sounds/banana.mp3', title: '03 Bananfluer Overalt - Jaga Jazzist' },
-    { url: 'sounds/spektral.mp3', title: '04 220 V Spektral (Final Mix) - Jaga Jazzist' },
-    { url: 'sounds/shrine.mp3', title: '05 The Shrine (OKIOK Remix) - Jaga Jazzist' },
+    { url: 'sounds/alcoholic.mp3', title: '01 The Alcoholic - Röyksopp' },
+    { url: 'sounds/spektral.mp3', title: '02 220 V Spektral (Final Mix) - Jaga Jazzist' },
+    { url: 'sounds/shrine.mp3', title: '03 The Shrine (OKIOK Remix) - Jaga Jazzist' },
+  { url: 'sounds/aumetra.mp3', title: '04 Aumetra the Witch - cYsmix' },
+  { url: 'sounds/ouroboros.mp3', title: '05 Ouroboros - Beats Antique' },
+  {url: 'sounds/aurevoir.mp3', title: '06 Aurevoir - Pyramid' },
+  {url: 'sounds/father.mp3', title: '07 Father - Pyramid' },
+  { url: 'sounds/panthertrek.mp3', title: '08 Panther Trek' },
+  { url: 'sounds/bhangrasaanj.mp3', title: '09 Bhangra Saanj - Beats Antique' },
+  { url: 'sounds/占い師ft.mp3', title: '10 占い師 Fortune Teller - cYsmix' },
+  { url: 'sounds/topaz.mp3', title: '11 Topaz - Bazz' },
+  { url: 'sounds/sunofagun.mp3', title: '12 Sun of a Gun - Bazz' },
   ];
 
   const handlePlayPause = () => {

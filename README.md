@@ -18,7 +18,7 @@
 
 ## (1) Description
 
-This was built with React, react-player, Node, Javascript, and CSS. Working react music player loaded with several test songs.
+A front end only single page app built with React, react-player, Node, Javascript, and CSS. Working react music player loaded with several test songs.
 
 ## (2) Badges
 

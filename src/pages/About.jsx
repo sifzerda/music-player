@@ -1,6 +1,6 @@
 import '../App.css';
-import SlotMachine from '../components/SlotMachine';
-import '../slotmachine.css';
+import Music from '../components/Music';
+import '../musicplayer.css';
 
 export default function About () {
   return (
@@ -8,9 +8,7 @@ export default function About () {
 
 {/* game component */}
 
-
-<SlotMachine />
-
+<Music />
 
 {/* -------------- */}
 
