@@ -24,11 +24,11 @@
   }
   
   a.cherry:hover {
-    color: cyan!important;
+    color: lime!important;
   }
   
   a.cherry {
-    color:  rgb(60, 255, 0);
+    color:  rgb(99, 124, 91);
     max-width: 300px;
   }
   

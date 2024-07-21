@@ -1,5 +1,5 @@
 import '../App.css';
-import Music from '../components/Music';
+
 import '../musicplayer.css';
 
 export default function About () {
@@ -7,8 +7,6 @@ export default function About () {
     <div className='main-content mx-3'>
 
 {/* game component */}
-
-<Music />
 
 {/* -------------- */}
 

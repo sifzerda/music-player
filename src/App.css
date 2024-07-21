@@ -11,6 +11,7 @@
   --lblue: #4f9bff;
   --light-blue: #87f7f1;
   --volt: #c8ff00;
+  --lime: #48ff00;
   --dark-blue: #000102;
   --yellow: #e5dc15;
   --dark-yellow: #c2bb11;
@@ -102,7 +103,6 @@ body,
 }
 
 #root {
-  border: var(--dark-blue) ridge 9px;
   margin: 0 auto;
   text-align: center;
 height: 550px;
@@ -185,7 +185,7 @@ padding: 5px;
 
 /* svg icons on contact page*/
 a:hover {
-  color: var(--cyan)!important;
+  color: var(--lime)!important;
 }
 
 /* ------ ---------- // NAV LINKS // ---------- ----------- */

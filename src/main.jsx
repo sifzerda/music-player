@@ -6,9 +6,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './App.jsx';
 import Error from './pages/Error.jsx';
 import About from './pages/About.jsx';
-
-import Music from './pages/Music.jsx';
-
+import Info from './pages/Info.jsx';
+ 
 // Define the accessible routes, and which components respond to which URL
 const router = createBrowserRouter([
   {
@@ -22,8 +21,8 @@ const router = createBrowserRouter([
       },
 
       {
-        path: '/Music',
-        element: <Music />
+        path: '/Info',
+        element: <Info />
       },
 
     ],

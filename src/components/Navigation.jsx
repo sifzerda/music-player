@@ -13,12 +13,12 @@ function Navigation() {
     <ul className="nav nav-tabs">
       <li className="nav-item">
         <Link to="/" className={isActive('/')}>
-          Slots
+          Music
         </Link>
       </li>
       <li className="nav-item">
-        <Link to="/music" className={isActive('/music')}>
-          Music
+        <Link to="/info" className={isActive('/info')}>
+          Info
         </Link>
       </li>
     </ul>
