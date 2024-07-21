@@ -95,6 +95,10 @@ Optimization:
   - [x] fix boundary of scroll
 - [x] customized volume adjustor
 - [x] restyle volume adjustor
+- [ ] user can make playlists
+- [ ] save play data; how many times song has been played, last 10 songs played
+- [ ] saving song progress/location if page returned to or skipped
+- [ ] youtube or music hosting site API to fetch songs from
 
 ## (10) Support
 
