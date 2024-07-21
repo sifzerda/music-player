@@ -44,8 +44,7 @@ A front end only single page app built with React, react-player, Node, Javascrip
 
 [Visit App deployed to Netlify](https://slotmachine-10.netlify.app/)
 
-![mp](https://github.com/user-attachments/assets/514ca036-be73-4324-894f-445f9045bc96)
-
+![pic2](https://github.com/user-attachments/assets/27063b19-bbc0-4984-925d-58f2fb27da78)
 
 ## (4) Installation
 
