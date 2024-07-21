@@ -1,14 +1,4 @@
-# SLOT MACHINE 🎰 + MUSIC PLAYER ▶️
-
-** slot machine not displaying in deployment; music player works
-
-Current games in gamestack:
-
-- [ ] Minesweeper
-- [ ] Solitaire
-- [ ] Asteroids
-- [ ] Pool
-- [x] Slot Machine + Music Player
+# MUSIC PLAYER ▶️
 
 ## Table of Contents
 
@@ -28,11 +18,7 @@ Current games in gamestack:
 
 ## (1) Description
 
-A personal project to create a react MERN stack app which has a number of simple games. I used trial and error and ChatGPT prompting. This was built with React, react-spring, styled components, react-player, Node, Javascript, and CSS. 
-
-This has a basic attempt at a slot machine (incomplete), and working react music player loaded with several test songs.
-
-The slow machine images aren't displaying deployed version.
+This was built with React, react-player, Node, Javascript, and CSS. Working react music player loaded with several test songs.
 
 ## (2) Badges
 
@@ -49,9 +35,8 @@ The slow machine images aren't displaying deployed version.
 ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white) 
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
-![Styled Components](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white)
 ![FontAwesome](https://img.shields.io/badge/Font%20Awesome-538DD7.svg?style=for-the-badge&logo=Font-Awesome&logoColor=white) 
-![Heroku](https://img.shields.io/badge/heroku-%23430098.svg?style=for-the-badge&logo=heroku&logoColor=white)
+![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
 
 ## (3) Visuals
 
@@ -65,8 +50,8 @@ The slow machine images aren't displaying deployed version.
 ## (4) Installation
 
 ```bash
-git clone https://github.com/sifzerda/slotmachine.git
-cd slot-machine
+git clone https://github.com/sifzerda/music-player.git
+cd music-player
 npm install
 npm run start
 ```
@@ -78,9 +63,7 @@ React-player:
 
 Technologies:
 
-+ <strong>react-spring: </strong> animation.
-+ Styled components (slot machine)
-+ react-player (music player)
++ react-player 
 
 ## (6) Dev Stuff: Building:
 
@@ -97,9 +80,6 @@ const ;
 
 ## (8) Bugs and Further Development: 
 
-- slot images stop out of alignment (local)
-- slot images don't display (deployed)
-
 Optimization:
 - use react-virtualized to only render visible stuff
 - once game basically running, convert it into Redux or Zustand
@@ -108,13 +88,14 @@ Optimization:
 
 ## (9) To do: 
 
-- [x] create slot boxes
-- [x] insert graphics/emojis 
-- [x] make slots spin
-- [ ] align images 
-- [ ] user gets points
-- [ ] user spends points to spin
-- [ ] fix images in deployed version
+- [x] create player
+- [x] add songs
+- [x] add play, pause, next/prev song
+- [x] styling like a car stereo/radio
+- [x] make current song scroll
+  - [x] fix boundary of scroll
+- [x] customized volume adjustor
+- [x] restyle volume adjustor
 
 ## (10) Support
 
