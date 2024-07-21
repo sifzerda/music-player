@@ -22,7 +22,7 @@ const MusicPlayer = () => {
     { url: 'sounds/ouroboros.mp3', title: '05 Ouroboros - Beats Antique' },
     { url: 'sounds/aurevoir.mp3', title: '06 Aurevoir - Pyramid' },
     { url: 'sounds/father.mp3', title: '07 Father - Pyramid' },
-    { url: 'sounds/panthertrek.mp3', title: '08 Panther Trek' },
+    { url: 'sounds/panthertrek.mp3', title: '08 Panther Trek - Vessels' },
     { url: 'sounds/bhangrasaanj.mp3', title: '09 Bhangra Saanj - Beats Antique' },
     { url: 'sounds/占い師ft.mp3', title: '10 占い師 Fortune Teller - cYsmix' },
     { url: 'sounds/topaz.mp3', title: '11 Topaz - Bazz' },
@@ -123,7 +123,7 @@ const MusicPlayer = () => {
       <div className="controls">
         <button className="control-button" onClick={handlePreviousSong}>◁◁</button>
         <button className="control-button" onClick={handlePlayPause}>
-          {isPlaying ? '||' : '▷'}
+          {isPlaying ? 'II' : '▷'}
         </button>
         <button className="control-button" onClick={handleNextSong}>▷▷</button>
         <button className="volume-toggle" onClick={toggleVolumeControl}>
