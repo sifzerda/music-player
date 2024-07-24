@@ -6,13 +6,11 @@ const MusicPlayer = () => {
   const [currentSongIndex, setCurrentSongIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [volume, setVolume] = useState(0.3);
-
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
-
   const [showVolumeControl, setShowVolumeControl] = useState(false);
-
   const playerRef = useRef(null);
+  const [isDragging, setIsDragging] = useState(false);
 
   const songs = [
     { url: 'sounds/alcoholic.mp3', title: '01 The Alcoholic - Röyksopp' },
@@ -55,7 +53,6 @@ const MusicPlayer = () => {
     setShowVolumeControl(!showVolumeControl);
   };
 
-  // Format time as mm:ss
   const formatTime = (seconds) => {
     const minutes = Math.floor(seconds / 60);
     const secs = Math.floor(seconds % 60);
@@ -78,8 +75,7 @@ const MusicPlayer = () => {
 
   const progress = duration ? (currentTime / duration) * 100 : 0;
 
-  // Handle click on progress bar to seek
-  const handleProgressBarClick = (e) => {
+  const handleProgressBarChange = (e) => {
     const progressBar = e.currentTarget;
     const rect = progressBar.getBoundingClientRect();
     const offsetX = e.clientX - rect.left;
@@ -89,8 +85,37 @@ const MusicPlayer = () => {
       const player = playerRef.current.getInternalPlayer();
       player.currentTime = newTime;
     }
-    setCurrentTime(newTime); // Update the currentTime state to reflect the new position
+    setCurrentTime(newTime);
   };
+
+  const handleMouseDown = (e) => {
+    setIsDragging(true);
+    handleProgressBarChange(e);
+  };
+
+  const handleMouseMove = (e) => {
+    if (isDragging) {
+      handleProgressBarChange(e);
+    }
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  useEffect(() => {
+    if (isDragging) {
+      document.addEventListener('mousemove', handleMouseMove);
+      document.addEventListener('mouseup', handleMouseUp);
+    } else {
+      document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mouseup', handleMouseUp);
+    }
+    return () => {
+      document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mouseup', handleMouseUp);
+    };
+  }, [isDragging]);
 
   return (
     <div className="music-player">
@@ -98,17 +123,21 @@ const MusicPlayer = () => {
         <div className="title2">.ılılılllıılılıllllıılılllıllı</div>
         <div className="title2">Now Playing:</div>
         <div className="title">{songs[currentSongIndex].title}</div>
-
-        <div className="progress-bar-container" onClick={handleProgressBarClick}>
+        
+        <div 
+          className="progress-bar-container" 
+          onMouseDown={handleMouseDown} 
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+        >
           <div className="progress-bar" style={{ width: `${progress}%` }}></div>
           <div className="progress-time">
             {formatTime(currentTime)} / {formatTime(duration)}
           </div>
         </div>
-
+        
         <div className="title2">{formatTime(currentTime)} / {formatTime(duration)}</div>
         <div className="title2"></div>
-
         <div className="title2">.ılılılllıılılıllllıılılllıllı</div>
       </div>
       <ReactPlayer
