@@ -57,6 +57,7 @@ npm run start
 
 React-player:
 - you can skip ahead or move back in song by clicking song progress bar.
+- You can also skip or rewind by dragging the progress bar back and forth
 
 ## (5) Usage
 
@@ -78,6 +79,9 @@ const ;
 ```
 
 ## (8) Bugs and Further Development: 
+
+Bugs:
+- Sometimes player doesn't show time progress on first entering page; you have to reload page by clicking the 'info' tabe and then returning to the player.
 
 Optimization:
 - use react-virtualized to only render visible stuff
