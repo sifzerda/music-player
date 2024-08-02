@@ -9,8 +9,9 @@ const MusicPlayer = () => {
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
   const [showVolumeControl, setShowVolumeControl] = useState(false);
-  const playerRef = useRef(null);
   const [isDragging, setIsDragging] = useState(false);
+
+  const playerRef = useRef(null);
 
   const songs = [
     { url: 'sounds/alcoholic.mp3', title: '01 The Alcoholic - Röyksopp' },
@@ -30,6 +31,8 @@ const MusicPlayer = () => {
     { url: 'sounds/oban.mp3', title: '14 Oban - Jaga Jazzist' },
     { url: 'sounds/apex.mp3', title: '14 Apex - Jaga Jazzist' },
   ];
+
+  // event listeners ---------------------------------------//
 
   const handlePlayPause = () => {
     setIsPlaying(!isPlaying);

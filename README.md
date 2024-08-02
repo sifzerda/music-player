@@ -40,6 +40,8 @@ A front end only single page app built with React, react-player, Node, Javascrip
 
 ## (3) Visuals
 
+Note: app's url path is 'slotmachine' -- this app originally was an attempt to make a slot machine.
+
 [Visit App deployed to Vercel](https://slotmachine-five.vercel.app/)
 
 [Visit App deployed to Netlify](https://slotmachine-10.netlify.app/)
@@ -69,6 +71,7 @@ Technologies:
 The main functions of code:
 
 - React-player has a default appearance, which was changed, setting controls={false} and making useStates to control volume, song progress bar, song time, etc.
+- playlist, time, volume, and song location tracked in useStates
 
 ## (7) Alternative Config
 
